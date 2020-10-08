@@ -23,6 +23,7 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 import io.flutter.plugin.common.PluginRegistry;
 
+import static android.content.Context.BATTERY_SERVICE;
 
 
 public class MainActivity extends FlutterActivity {
@@ -90,6 +91,7 @@ public class MainActivity extends FlutterActivity {
         };
     }
 
+    // bug to this function return 1 all time in charge status
     private int getBatteryLevel() {
         if(VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             BatteryManager batteryManager = (BatteryManager) getSystemService(BATTERY_SERVICE);
